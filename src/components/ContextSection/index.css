@@ -1,0 +1,42 @@
+.context-section-container {
+  width: 40%;
+  min-height: 1080px;
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin: 0;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .context-section-container {
+    display: none;
+  }
+}
+
+.context-name-container {
+  display: flex;
+  align-items: center;
+}
+
+.context-icons {
+  color: #424242;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.context-name {
+  color: #424242;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.active-icon {
+  color: #ff0000;
+}
+
+.active-tab {
+  background-color: #e2e8f0;
+}
