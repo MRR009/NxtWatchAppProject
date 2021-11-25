@@ -2,14 +2,12 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
-import {BsSearch} from 'react-icons/bs'
-import {RiCloseLine} from 'react-icons/ri'
 
 import Header from '../Header'
-import DarkHeader from '../DarkThemeHeader'
 import ContextSection from '../ContextSection'
+import TrendingTab from '../TrendingTab'
+import DarkHeader from '../DarkThemeHeader'
 import DarkContextSection from '../DarkThemeContextSection'
-import HomeTab from '../HomeTab'
 
 import './index.css'
 
@@ -20,13 +18,11 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-class Home extends Component {
+class Trending extends Component {
   state = {
-    homeVideosList: [],
+    trendingVideosList: [],
     apiStatus: apiStatusConstants.initial,
     channelDetails: [],
-    searchInput: '',
-    bannerVisible: true,
     darkTheme: false,
   }
 
@@ -52,10 +48,9 @@ class Home extends Component {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
-    const {searchInput} = this.state
     const jwtToken = Cookies.get('jwt_token')
-    const homeVideosApiUrl = `https://apis.ccbp.in/videos/all?search=${searchInput}`
-    // const trendingVideosApiUrl = 'https://apis.ccbp.in/videos/trending'
+    // const homeVideosApiUrl = 'https://apis.ccbp.in/videos/all?search='
+    const trendingVideosApiUrl = 'https://apis.ccbp.in/videos/trending'
     // const gamingVideosApiUrl = 'https://apis.ccbp.in/videos/gaming'
     const options = {
       headers: {
@@ -64,20 +59,20 @@ class Home extends Component {
       method: 'GET',
     }
 
-    const response = await fetch(homeVideosApiUrl, options)
+    const response = await fetch(trendingVideosApiUrl, options)
     if (response.ok) {
       const fetchedData = await response.json()
       // console.log(fetchedData)
-      const updatedHomeVideos = fetchedData.videos.map(video =>
+      const updatedTrendingVideos = fetchedData.videos.map(video =>
         this.convertVideosDetails(video),
       )
-      const updatedChannelDetails = updatedHomeVideos.map(video =>
+      const updatedChannelDetails = updatedTrendingVideos.map(video =>
         this.convertChannelDetails(video.channel),
       )
       // console.log(updatedChannelDetails)
 
       this.setState({
-        homeVideosList: [...updatedHomeVideos],
+        trendingVideosList: [...updatedTrendingVideos],
         apiStatus: apiStatusConstants.success,
         channelDetails: [...updatedChannelDetails],
       })
@@ -88,80 +83,12 @@ class Home extends Component {
     }
   }
 
-  enterSearchInput = event => {
-    if (event.key === 'Enter') {
-      this.getVideosDetails()
-    }
-  }
-
-  changeSearchInput = event => {
-    this.setState({searchInput: event.target.value})
-  }
-
-  closeBanner = () => this.setState({bannerVisible: false})
-
-  onClickRetryButton = () => {
-    this.setState({searchInput: ''}, this.getVideosDetails)
-  }
-
-  onClickFailureRetryButton = () => {
-    this.getVideosDetails()
-  }
-
   toggleThemeButton = () => {
     this.setState(prevState => ({darkTheme: !prevState.darkTheme}))
   }
 
-  renderSearchInput = () => {
-    const {searchInput} = this.state
-
-    return (
-      <div className="search-input-container">
-        <input
-          value={searchInput}
-          type="search"
-          className="search-input"
-          placeholder="Search"
-          onChange={this.changeSearchInput}
-          onKeyDown={this.enterSearchInput}
-        />
-        <button
-          type="button"
-          data-testid="searchButton"
-          className="search-icon-button"
-        >
-          <BsSearch className="search-icon" />
-        </button>
-      </div>
-    )
-  }
-
-  renderBannerSection = () => {
-    const {bannerVisible} = this.state
-
-    return bannerVisible ? (
-      <div data-testid="banner" className="home-top-section">
-        <div className="home-premium-container">
-          <img
-            className="website-logo"
-            src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-            alt="nxt watch logo"
-          />
-          <p className="buy-message">Buy Nxt Watch Premium</p>
-          <button type="button" className="get-it-now-button">
-            GET IT NOW
-          </button>
-        </div>
-        <button
-          type="button"
-          data-testid="close"
-          className="close-button"
-          onClick={this.closeBanner}
-        >
-          <RiCloseLine size={20} color="#231f20" />
-        </button>
-      </div>
-    ) : null
+  onClickRetryButton = () => {
+    this.getVideosDetails()
   }
 
   renderFailureView = () => (
@@ -178,7 +105,7 @@ class Home extends Component {
       <button
         type="button"
         className="retry-button"
-        onClick={this.onClickFailureRetryButton}
+        onClick={this.onClickRetryButton}
       >
         Retry
       </button>
@@ -191,37 +118,15 @@ class Home extends Component {
     </div>
   )
 
-  renderHomeTab = () => {
-    const {homeVideosList, channelDetails} = this.state
+  renderTrendingTab = () => {
+    const {trendingVideosList, channelDetails, darkTheme} = this.state
     // console.log(homeVideosList)
-    return homeVideosList.length === 0 ? (
-      <div className="no-search-results-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
-          alt="no videos"
-          className="no-search-results-image"
-        />
-        <h1 className="no-search-heading">No Search results found</h1>
-        <p className="no-search-description">
-          Try different key words or remove search filter
-        </p>
-        <button
-          type="button"
-          className="retry-button"
-          onClick={this.onClickRetryButton}
-        >
-          Retry
-        </button>
-      </div>
-    ) : (
-      <div className="home-tab-container">
-        {this.renderBannerSection()}
-        {this.renderSearchInput()}
-        <HomeTab
-          homeVideosList={homeVideosList}
-          channelDetails={channelDetails}
-        />
-      </div>
+    return (
+      <TrendingTab
+        trendingVideosList={trendingVideosList}
+        channelDetails={channelDetails}
+        darkTheme={darkTheme}
+      />
     )
   }
 
@@ -230,7 +135,7 @@ class Home extends Component {
 
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderHomeTab()
+        return this.renderTrendingTab()
       case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
@@ -266,4 +171,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Trending

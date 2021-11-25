@@ -1,0 +1,224 @@
+.video-item-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .video-item-container {
+    flex-direction: row;
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .loader-container {
+    width: 70%;
+  }
+}
+
+.error-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  padding-bottom: 64px;
+}
+
+@media screen and (min-width: 768px) {
+  .error-view-container {
+    margin-top: 0px;
+    margin-left: 30px;
+    width: 70%;
+    padding-bottom: 0;
+  }
+}
+
+.failure-img {
+  width: 250px;
+  height: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-img {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+.failure-heading-text {
+  color: #171f46;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-heading-text {
+    font-size: 24px;
+  }
+}
+
+.failure-description {
+  text-align: center;
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 14px;
+  width: 90%;
+  max-width: 288px;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-description {
+    font-size: 18px;
+    width: 60%;
+    max-width: 466px;
+  }
+}
+
+/* Video Item Card */
+.video-player-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.responsive-container {
+}
+
+.react-player {
+  width: 100%;
+  height: 100%;
+}
+
+.video-title {
+  color: #0f0f0f;
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.middle-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.views-container {
+  display: flex;
+}
+
+.views-count {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.date-duration {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.like-dislike-container {
+  display: flex;
+  margin-right: 25px;
+}
+
+.like-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: #475569;
+}
+
+.toggled-icon {
+  width: 25px;
+  height: 25px;
+  color: #2563eb;
+}
+
+.toggled-icon-text {
+  color: #2563eb;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.icon-text {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.prev-liked {
+  color: #64748b;
+}
+
+.horizontal-line {
+  border: 1px solid #475569;
+  height: 0.5px;
+}
+
+.video-description-channel-container {
+  display: flex;
+  width: 100%;
+}
+
+.channel-image {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.video-details-container {
+  margin-left: 20px;
+}
+
+.video-channel-name {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.channel-subscribers {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.video-description {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 35px;
+}

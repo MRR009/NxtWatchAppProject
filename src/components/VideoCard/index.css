@@ -1,0 +1,54 @@
+.thumbnail-image {
+  width: 100%;
+}
+
+.video-details {
+  display: flex;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.video-content-details {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.video-title {
+  color: #0f0f0f;
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.video-channel-name {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.views-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.views-container {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.date-duration {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}

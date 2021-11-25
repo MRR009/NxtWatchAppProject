@@ -1,0 +1,62 @@
+.saved-link-item {
+  text-decoration: none;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.saved-thumbnail-image {
+  width: 100%;
+  max-width: 280px;
+  height: 160px;
+}
+
+.saved-video-details {
+  display: flex;
+}
+
+.saved-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.saved-video-content-details {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.saved-video-title {
+  color: #0f0f0f;
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.saved-video-channel-name {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.saved-views-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.saved-views-container {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.saved-date-duration {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}

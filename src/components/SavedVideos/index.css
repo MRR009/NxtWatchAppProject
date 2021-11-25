@@ -1,0 +1,12 @@
+.saved-video-section-container {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .saved-video-section-container {
+    flex-direction: row;
+  }
+}
+
+/* Saved Videos Card */

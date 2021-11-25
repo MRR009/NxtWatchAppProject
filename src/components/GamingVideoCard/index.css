@@ -1,0 +1,54 @@
+.gaming-thumbnail-image {
+  width: 100%;
+}
+
+.gaming-video-details {
+  display: flex;
+}
+
+.gaming-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.gaming-video-content-details {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.gaming-video-title {
+  color: #0f0f0f;
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.gaming-video-channel-name {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.gaming-views-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.gaming-views-container {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.gaming-date-duration {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+}

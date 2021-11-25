@@ -1,7 +1,7 @@
-.context-section-container {
+.dark-context-section-container {
   width: 20%;
   min-height: 786px;
-  background-color: #ffffff;
+  background-color: #181818;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -9,12 +9,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .context-section-container {
+  .dark-context-section-container {
     display: none;
   }
 }
 
-.context-name-container {
+.dark-context-name-container {
   display: flex;
   align-items: center;
   padding-left: 15px;
@@ -22,52 +22,52 @@
   cursor: pointer;
 }
 
-.context-icons {
-  color: #424242;
+.dark-context-icons {
+  color: #cccccc;
   width: 16px;
   height: 16px;
   margin-right: 10px;
 }
 
-.context-name {
-  color: #424242;
+.dark-context-name {
+  color: #ffffff;
   font-family: 'Roboto';
   font-size: 16px;
-  font-weight: 500;
 }
 
-.active-icon {
+.dark-active-icon {
   color: #ff0000;
 }
 
-.active-tab {
-  background-color: #e2e8f0;
+.dark-active-tab {
+  background-color: #424242;
+  font-weight: 500;
 }
 
-.contact-us-section {
+.dark-contact-us-section {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.contact-us-heading {
-  color: #1e293b;
+.dark-contact-us-heading {
+  color: #ffffff;
   font-family: 'Roboto';
   font-size: 18px;
 }
 
-.logos-container {
+.dark-logos-container {
   display: flex;
   align-items: center;
 }
 
-.contact-us-logo {
+.dark-contact-us-logo {
   width: 40px;
   height: 40px;
   margin-right: 10px;
 }
 
-.message {
-  color: #1e293b;
+.dark-message {
+  color: #ffffff;
   font-family: 'Roboto';
   font-size: 15px;
   font-weight: 500;

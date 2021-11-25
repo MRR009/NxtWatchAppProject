@@ -1,0 +1,51 @@
+.no-saved-section-container {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .no-saved-section-container {
+    flex-direction: row;
+  }
+}
+
+.saved-videos-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 1080px;
+  width: 100%;
+}
+
+.render-no-videos-container {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-saved-containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-saved-image {
+  width: 500px;
+  height: 500px;
+}
+
+.no-saved-heading {
+  color: #181818;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.no-saved-message {
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}

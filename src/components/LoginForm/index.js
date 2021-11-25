@@ -128,11 +128,12 @@ class LoginForm extends Component {
           <div className="showpswd-container">
             <input
               type="checkbox"
-              id="showPswd"
+              id="showPassword"
+              label="Show Password"
               onClick={this.togglePassword}
               className="checkbox-input"
             />
-            <label className="checkbox-label" htmlFor="showPswd">
+            <label className="checkbox-label" htmlFor="showPassword">
               Show Passowrd
             </label>
           </div>
